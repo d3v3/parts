@@ -22,6 +22,4 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:layout_alignParentBottom="true"
         android:id="@+id/frameAuth"></FrameLayout>
-
-
 </LinearLayout>
