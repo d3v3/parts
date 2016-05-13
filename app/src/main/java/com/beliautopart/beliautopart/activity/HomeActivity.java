@@ -36,9 +36,17 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void onSearchClick(View v) {
+    public void onSearchPartMobilClick(View v) {
         Intent i = new Intent(this, SearchActivity.class);
+        i.putExtra("kat", "2");
         startActivity(i);
     }
+
+    public void onSearchPartMotorClick(View v) {
+        Intent i = new Intent(this, SearchActivity.class);
+        i.putExtra("kat", "1");
+        startActivity(i);
+    }
+
 
 }

@@ -25,12 +25,19 @@ public class PartsService {
 
     public void SearchParts(final SearchOptionModel option, SendDataHelper.VolleyCallback callback) {
         Map<String, String> params = new HashMap<String, String>();
-        params.put("keyword", option.getKeyword());
-        params.put("kat", "" + option.getKat());
-        params.put("jenis", "" + option.getJenis());
-        params.put("merk", "" + option.getMerk());
-        params.put("tipe", "" + option.getTipe());
-        params.put("kat_item", "" + option.getKatItem());
-        sendData.SendData(params, AppConfig.URL_PARTS_GET, 1, callback);
+        if (!option.getKeyword().equals("")) {
+            params.put("keyword", option.getKeyword());
+        } else if (option.getKat() != null) {
+            params.put("kat", "" + option.getKat());
+        } else if (option.getJenis() != null) {
+            params.put("jenis", "" + option.getJenis());
+        } else if (option.getMerk() != null) {
+            params.put("merk", "" + option.getMerk());
+        } else if (option.getTipe() != null) {
+            params.put("tipe", "" + option.getTipe());
+        } else if (option.getKatItem() != null) {
+            params.put("kat_item", "" + option.getKatItem());
+        }
+        sendData.SendData(params, AppConfig.URL_PARTS_GET, 0, callback);
     }
 }

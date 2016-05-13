@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/imgProduk"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="8dp" />
+
+    <TextView
+        android:id="@+id/txtNamaProduk"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imgProduk"
+        android:text="Nama Produk"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:id="@+id/txtKode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtNamaProduk"
+        android:layout_toRightOf="@+id/imgProduk"
+        android:layout_toEndOf="@+id/imgProduk"
+        android:paddingBottom="4dp"
+        android:textSize="14sp"
+        android:text="Kode Produk" />
+
+    <TextView
+        android:id="@+id/txtKompatibel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtKode"
+        android:layout_toRightOf="@+id/imgProduk"
+        android:layout_toEndOf="@+id/imgProduk"
+        android:paddingBottom="4dp"
+        android:textSize="14sp"
+        android:text="Kompatibel" />
+
+    <TextView
+        android:id="@+id/txtharga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtKompatibel"
+        android:layout_toRightOf="@+id/imgProduk"
+        android:layout_toEndOf="@+id/imgProduk"
+        android:paddingBottom="4dp"
+        android:textSize="14sp"
+        android:text="Harga" />
+
+</RelativeLayout>

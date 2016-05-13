@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.VolleyError;
 import com.beliautopart.beliautopart.R;
 import com.beliautopart.beliautopart.helper.SendDataHelper;
 import com.beliautopart.beliautopart.model.UserModel;
@@ -61,6 +62,11 @@ public class LoginFragment extends Fragment {
             public String onSuccess(String result) {
                 Toast.makeText(getContext(), result.toString(), Toast.LENGTH_LONG).show();
                 return result;
+            }
+
+            @Override
+            public String onError(VolleyError result) {
+                return null;
             }
         });
     }

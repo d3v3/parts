@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.VolleyError;
 import com.beliautopart.beliautopart.R;
 import com.beliautopart.beliautopart.helper.SendDataHelper;
 import com.beliautopart.beliautopart.model.UserModel;
@@ -45,7 +46,6 @@ public class RegisterFragment extends Fragment {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("pass :", inputPassword.getText() + " " + inputRePassword.getText());
                 if (inputEmail.getText().toString().equals(""))
                     Toast.makeText(getContext(), "Email belum diisi", Toast.LENGTH_SHORT).show();
                 else if (inputPassword.getText().toString().equals(""))
@@ -66,6 +66,7 @@ public class RegisterFragment extends Fragment {
     }
 
     private void onRegister() {
+        Log.d("cek mutiple", "");
         String namaDepan = inputNamaDepan.getText().toString().trim();
         String namaBelakang = inputNamaBelakang.getText().toString().trim();
         String email = inputEmail.getText().toString().trim();
@@ -77,6 +78,11 @@ public class RegisterFragment extends Fragment {
             public String onSuccess(String result) {
                 Toast.makeText(getContext(), result, Toast.LENGTH_LONG);
                 return result;
+            }
+
+            @Override
+            public String onError(VolleyError result) {
+                return null;
             }
         });
     }
