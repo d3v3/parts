@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkError;
 import com.android.volley.NoConnectionError;
 import com.android.volley.ParseError;
@@ -80,6 +81,7 @@ public class SendDataHelper {
                     Toast.makeText(context,
                             "AuthFailureError", Toast.LENGTH_LONG).show();
                 }
+                callback.onError(error);
             }
         }) {
 
@@ -90,6 +92,7 @@ public class SendDataHelper {
             }
 
         };
+        strReq.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, url);
@@ -98,6 +101,8 @@ public class SendDataHelper {
 
     public interface VolleyCallback {
         String onSuccess(String result);
+
+        String onError(VolleyError result);
     }
 
     private void showDialog() {

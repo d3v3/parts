@@ -4,12 +4,15 @@ package com.beliautopart.beliautopart.model;
  * Created by brandon on 12/05/16.
  */
 public class SearchOptionModel {
-    private String keyword;
-    private int kat;
-    private int jenis;
-    private int merk;
-    private int tipe;
-    private int katItem;
+    private String keyword = "";
+    private Integer kat = null;
+    private Integer jenis = null;
+    private Integer merk = null;
+    private Integer tipe = null;
+    private Integer katItem = null;
+
+    public SearchOptionModel() {
+    }
 
     public SearchOptionModel(String keyword, int kat, int jenis, int merk, int tipe, int katItem) {
         this.keyword = keyword;
@@ -17,6 +20,14 @@ public class SearchOptionModel {
         this.jenis = jenis;
         this.merk = merk;
         this.tipe = tipe;
+        this.katItem = katItem;
+    }
+
+    public Integer getKatItem() {
+        return katItem;
+    }
+
+    public void setKatItem(Integer katItem) {
         this.katItem = katItem;
     }
 
@@ -28,43 +39,35 @@ public class SearchOptionModel {
         this.keyword = keyword;
     }
 
-    public int getKat() {
+    public Integer getKat() {
         return kat;
     }
 
-    public void setKat(int kat) {
+    public void setKat(Integer kat) {
         this.kat = kat;
     }
 
-    public int getJenis() {
+    public Integer getJenis() {
         return jenis;
     }
 
-    public void setJenis(int jenis) {
+    public void setJenis(Integer jenis) {
         this.jenis = jenis;
     }
 
-    public int getMerk() {
+    public Integer getMerk() {
         return merk;
     }
 
-    public void setMerk(int merk) {
+    public void setMerk(Integer merk) {
         this.merk = merk;
     }
 
-    public int getTipe() {
+    public Integer getTipe() {
         return tipe;
     }
 
-    public void setTipe(int tipe) {
+    public void setTipe(Integer tipe) {
         this.tipe = tipe;
-    }
-
-    public int getKatItem() {
-        return katItem;
-    }
-
-    public void setKatItem(int kat_item) {
-        this.katItem = kat_item;
     }
 }

@@ -5,7 +5,7 @@ package com.beliautopart.beliautopart.app;
  */
 public class AppConfig {
     public static String SERVER = "http://api.beliautopart.com/";
-    public static String URL_PARTS_GET = SERVER + "parts/get/";
+    public static String URL_PARTS_GET = SERVER + "parts.php?action=get";
     public static String URL_USER_REGISTER = SERVER + "user/register/";
     public static String URL_USER_LOGIN = SERVER + "user/login/";
 }
